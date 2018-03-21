@@ -59,7 +59,7 @@ model.add(Dense(50,activation='relu'))
 model.add(Dropout(0.2))
 model.add(Dense(6,activation='sigmoid'))
 
-model.compile(optimizer=Adam(lr = 0.001),loss='categorical_crossentropy',metrics=['accuracy'])
+model.compile(optimizer=Adam(lr = 0.001),loss='binary_crossentropy',metrics=['accuracy'])
 
 from sklearn.model_selection import train_test_split
 X_tr,X_te,y_tr,y_te = train_test_split(X_train_p,y_train,test_size=0.20)
