@@ -49,7 +49,7 @@ from keras.layers import Embedding
 from keras.optimizers import Adam
 
 model = Sequential()
-model.add(Embedding(len(tokenizer.word_index) + 1, 300, weights=[embedding_matrix],input_length=50, trainable=True))
+model.add(Embedding(len(tokenizer.word_index) + 1, 300, weights=[embedding_matrix],input_length=50, trainable=False))
 model.add(Bidirectional(CuDNNLSTM(300, return_sequences=True)))
 model.add(Conv1D(filters=128,kernel_size=5,padding='same',activation='relu'))
 model.add(MaxPooling1D(3))
